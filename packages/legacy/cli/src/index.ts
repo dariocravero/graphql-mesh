@@ -344,13 +344,13 @@ export function createBuiltMeshHTTPHandler<TServerContext = {}>(): MeshHTTPHandl
         }
       },
     )
-    .command<{ fileType: 'json' | 'ts' | 'js'; throwOnInvalidConfig: boolean }>(
+    .command<{ fileType: 'json' | 'ts' | 'mjs'; throwOnInvalidConfig: boolean }>(
       cliParams.buildArtifactsCommand,
       'Builds artifacts',
       builder => {
         builder.option('fileType', {
           type: 'string',
-          choices: ['json', 'ts', 'js'],
+          choices: ['json', 'ts', 'mjs'],
           default: 'ts',
         });
         builder.option('throwOnInvalidConfig', {
